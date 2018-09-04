@@ -28,4 +28,4 @@ configurations:
       iterate:
         processesToKill: [java]
         buildCommands:
-        - [./run.sh]
+        - [mvn, package]
