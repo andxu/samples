@@ -13,4 +13,4 @@ RUN ["mvn", "package"]
 
 FROM base AS final
 COPY --from=build /usr/src/app/exec-module2/target/exec-multi-module-module2-1.0.one-jar.jar .
-CMD ["java", "-jar", "exec-module2/target/exec-multi-module-module2-1.0.one-jar.jar"]
+CMD ["java", "-jar", "exec-multi-module-module2-1.0.one-jar.jar"]
