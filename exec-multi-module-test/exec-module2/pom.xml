@@ -21,7 +21,7 @@
     </dependencies>
     <build>
         <plugins>
-              <!--<plugin>
+            <!-- <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
                 <configuration>
@@ -31,8 +31,8 @@
                         </manifest>
                     </archive>
                 </configuration>
-            </plugin> 
-            <plugin>
+            </plugin>  -->
+            <!-- <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
                 <configuration>
@@ -41,7 +41,8 @@
                         <argument>argument1</argument>
                     </arguments>
                 </configuration>
-            </plugin> 
+            </plugin>  -->
+            <!-- <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <configuration>
                     <archive>
