@@ -3,11 +3,8 @@ EXPOSE 8080
 
 WORKDIR /usr/src/app
 COPY pom.xml .
-COPY application/pom.xml ./application/
-COPY library/pom.xml ./library/
-
 RUN ["/usr/local/bin/mvn-entrypoint.sh", "mvn", "verify", "--fail-never"]
 COPY . .
 RUN ["mvn", "package"]
 
-CMD ["java", "-jar", "application/target/gs-multi-module-application-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar", "target/gs-multi-module-0.0.1-SNAPSHOT.jar"]
