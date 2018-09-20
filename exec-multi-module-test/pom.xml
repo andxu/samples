@@ -10,7 +10,7 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>exec-module1</module>
+        <module>./exec-module1/pom.xml</module>
         <module>exec-module2</module>
     </modules>
 

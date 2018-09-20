@@ -8,5 +8,4 @@ COPY exec-module2/pom.xml ./exec-module2/
 RUN ["/usr/local/bin/mvn-entrypoint.sh", "mvn", "verify", "--fail-never"]
 COPY . .
 RUN ["mvn", "package"]
-
-CMD ["java", "-jar", "exec-module2/target/exec-multi-module-module2-1.0.one-jar.jar"]
+CMD ["java", "-cp", "./exec-module1/target/exec-multi-module-module1-1.0.jar:/root/.m2/repository/org/apache/commons/commons-lang3/3.6/commons-lang3-3.6.jar:/root/.m2/repository/commons-io/commons-io/2.6/commons-io-2.6.jar:./exec-module2/target/exec-multi-module-module2-1.0.jar", "Main"]
