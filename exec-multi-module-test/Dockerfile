@@ -10,13 +10,13 @@ COPY exec-module2/pom.xml ./exec-module2/
 RUN ["/usr/local/bin/mvn-entrypoint.sh", "mvn", "verify", "--fail-never"]
 COPY . .
 RUN ["mvn","package","-Dmaven.test.skip=true","-Dcheckstyle.skip=true","-Dmaven.javadoc.skip=true","-Dmaven.rpm.skip=true"]
-RUN ["mkdir","-p","publish"]
-RUN ["cp","./exec-module2/target/exec-multi-module-module2-1.0.jar","publish/"]
-RUN ["cp","./exec-module1/target/exec-multi-module-module1-1.0.jar","publish/"]
-RUN ["cp","/root/.m2/repository/org/apache/commons/commons-lang3/3.6/commons-lang3-3.6.jar","publish/"]
-RUN ["cp","/root/.m2/repository/commons-io/commons-io/2.6/commons-io-2.6.jar","publish/"]
+RUN ["mkdir","-p","deploy"]
+RUN ["cp", "./exec-module2/target/exec-multi-module-module2-1.0.jar", \
+	"./exec-module1/target/exec-multi-module-module1-1.0.jar", \
+	"/root/.m2/repository/org/apache/commons/commons-lang3/3.6/commons-lang3-3.6.jar", \
+	"/root/.m2/repository/commons-io/commons-io/2.6/commons-io-2.6.jar", \
+	"deploy/"]
 
 FROM base AS final
-COPY --from=build /usr/src/app/publish .
-# RUN ["/bin/sh","-c", "apt-get update && apt-get install procps -y"]
-CMD ["java","-cp","*","Main"]
+COPY --from=build /usr/src/app/deploy .
+CMD ["java","-cp",".:*","Main"]

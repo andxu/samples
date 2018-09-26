@@ -16,7 +16,7 @@
         <dependency>
             <groupId>com.ms.samples</groupId>
             <artifactId>exec-multi-module-module1</artifactId>
-            <version>${project.version}</version>
+            <version>1.0</version>
         </dependency>
 		<dependency>
 			<groupId>commons-io</groupId>
