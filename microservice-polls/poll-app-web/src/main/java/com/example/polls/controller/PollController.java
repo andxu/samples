@@ -21,6 +21,7 @@ import java.net.URI;
 
 @RestController
 @RequestMapping("/api/polls")
+@SuppressWarnings("unused")
 public class PollController {
 
     @Autowired
